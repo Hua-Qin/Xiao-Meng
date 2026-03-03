@@ -25,6 +25,9 @@ GitHub 仓库需要配置：
 
 同步脚本：`.github/scripts/sync-release-to-gitee.sh`
 
+先决条件：Gitee 仓库必须先配置为 **Pull 镜像**（仓库管理 -> 镜像管理）。  
+否则 GitHub 工作流会返回：`{"error":"未配置Pull镜像"}`。
+
 建议在 Gitee 仓库的流水线里配置环境变量：
 
 - `SOURCE_GITHUB_REPOSITORY`：例如 `AAswordman/Operit`
