@@ -30,6 +30,11 @@ jobs:
     - name: Install NDK 27.0.12077973
       run: sdkmanager "ndk;27.0.12077973"
 
+    - name: Update submodules
+      run: |
+        git submodule update --init --recursive
+        git submodule foreach git pull origin master || true
+
     - name: Create local.properties
       run: |
         echo "sdk.dir=$ANDROID_HOME" > local.properties
