@@ -30,10 +30,23 @@ jobs:
     - name: Install NDK 27.0.12077973
       run: sdkmanager "ndk;27.0.12077973"
 
-    - name: Update submodules
+    - name: Initialize missing submodules
       run: |
-        git submodule update --init --recursive
-        git submodule foreach git pull origin master || true
+        git submodule update --init --recursive || true
+        if [ ! -d "quickjs/thirdparty/quickjs" ]; then
+          mkdir -p quickjs/thirdparty
+          git clone https://github.com/bellard/quickjs.git quickjs/thirdparty/quickjs
+        fi
+        if [ ! -d "app/src/main/cpp/thirdparty/webrtc_aec3" ]; then
+          mkdir -p app/src/main/cpp/thirdparty
+          git clone https://github.com/khomin/AEC3_cmake.git app/src/main/cpp/thirdparty/webrtc_aec3
+        fi
+        if [ ! -d "app/src/main/cpp/thirdparty/ncnn" ]; then
+          git clone https://github.com/Tencent/ncnn.git app/src/main/cpp/thirdparty/ncnn
+        fi
+        if [ ! -d "app/src/main/cpp/thirdparty/sherpa-ncnn" ]; then
+          git clone https://github.com/k2-fsa/sherpa-ncnn.git app/src/main/cpp/thirdparty/sherpa-ncnn
+        fi
 
     - name: Create local.properties
       run: |
