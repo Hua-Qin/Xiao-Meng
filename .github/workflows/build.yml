@@ -27,13 +27,12 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Install NDK
-      run: sdkmanager "ndk;25.1.8937393"
+    - name: Install NDK 27.0.12077973
+      run: sdkmanager "ndk;27.0.12077973"
 
     - name: Create local.properties
       run: |
         echo "sdk.dir=$ANDROID_HOME" > local.properties
-        echo "ndk.dir=$ANDROID_HOME/ndk/25.1.8937393" >> local.properties
         echo "GITHUB_CLIENT_ID=${{ secrets.GITHUB_CLIENT_ID }}" >> local.properties
 
     - name: Setup Gradle
