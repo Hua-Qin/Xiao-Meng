@@ -58,7 +58,7 @@ fun NewChatScreenHeader(
                 NavigationButton(
                     icon = Icons.Default.Task,
                     label = "任务",
-                    isSelected = selectedItem == NavigationItem.Tasks,
+                    isSelected = selectedItem is NavigationItem.Tasks,
                     onClick = {
                         selectedItem = NavigationItem.Tasks
                         onNavigate(NavigationItem.Tasks)
@@ -68,7 +68,7 @@ fun NewChatScreenHeader(
                 NavigationButton(
                     icon = Icons.Default.Work,
                     label = "技能",
-                    isSelected = selectedItem == NavigationItem.Skills,
+                    isSelected = selectedItem is NavigationItem.Skills,
                     onClick = {
                         selectedItem = NavigationItem.Skills
                         onNavigate(NavigationItem.Skills)
@@ -78,7 +78,7 @@ fun NewChatScreenHeader(
                 NavigationButton(
                     icon = Icons.Default.Star,
                     label = "收藏",
-                    isSelected = selectedItem == NavigationItem.Favorites,
+                    isSelected = selectedItem is NavigationItem.Favorites,
                     onClick = {
                         selectedItem = NavigationItem.Favorites
                         onNavigate(NavigationItem.Favorites)

@@ -197,7 +197,7 @@ private fun getToolCards(): List<ToolCard> {
         ),
         ToolCard(
             title = "工作流",
-            icon = Icons.Default.Workflow,
+            icon = Icons.Default.AccountTree,
             iconBackground = Color(0xFFDBEAFE),
             iconColor = Color(0xFF2563EB)
         )
