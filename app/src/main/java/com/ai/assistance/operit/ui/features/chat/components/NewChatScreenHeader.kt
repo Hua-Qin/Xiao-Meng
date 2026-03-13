@@ -29,7 +29,7 @@ fun NewChatScreenHeader(
     modifier: Modifier = Modifier,
     onNavigate: (NavigationItem) -> Unit
 ) {
-    var selectedItem by remember { mutableStateOf(NavigationItem.Chat) }
+    var selectedItem by remember { mutableStateOf<NavigationItem>(NavigationItem.Chat) }
     
     Column(modifier = modifier.fillMaxWidth()) {
         // 顶部导航栏
