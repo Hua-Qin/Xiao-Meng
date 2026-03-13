@@ -95,7 +95,7 @@ fun NewChatScreenHeader(
                 .background(MaterialTheme.colorScheme.surfaceVariant)
         ) {
             when (selectedItem) {
-                NavigationItem.Chat -> {
+                is NavigationItem.Chat -> {
                     Box(
                         modifier = Modifier
                             .width(40.dp)
@@ -105,7 +105,7 @@ fun NewChatScreenHeader(
                             .padding(start = 16.dp)
                     )
                 }
-                NavigationItem.Tasks -> {
+                is NavigationItem.Tasks -> {
                     Box(
                         modifier = Modifier
                             .width(40.dp)
@@ -115,7 +115,7 @@ fun NewChatScreenHeader(
                             .padding(end = 140.dp)
                     )
                 }
-                NavigationItem.Skills -> {
+                is NavigationItem.Skills -> {
                     Box(
                         modifier = Modifier
                             .width(40.dp)
@@ -125,7 +125,7 @@ fun NewChatScreenHeader(
                             .padding(end = 80.dp)
                     )
                 }
-                NavigationItem.Favorites -> {
+                is NavigationItem.Favorites -> {
                     Box(
                         modifier = Modifier
                             .width(40.dp)
