@@ -125,13 +125,16 @@ fun NewChatInputSection(
                         fontSize = 16.sp,
                         color = MaterialTheme.colorScheme.onSurface
                     ),
-                    placeholder = {
-                        Text(
-                            text = "请输入您的问题...",
-                            fontSize = 16.sp,
-                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f),
-                            style = MaterialTheme.typography.bodyMedium
-                        )
+                    decorationBox = { innerTextField ->
+                        if (userMessage.text.isEmpty()) {
+                            Text(
+                                text = "请输入您的问题...",
+                                fontSize = 16.sp,
+                                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f),
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                        }
+                        innerTextField()
                     },
                     modifier = Modifier.fillMaxWidth()
                 )

@@ -6,7 +6,6 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
-import androidx.compose.animation.animateEnterExit
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -20,7 +19,7 @@ import androidx.compose.material.icons.filled.FileCopy
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.WbSunny
-import androidx.compose.material.icons.filled.Workflow
+import androidx.compose.material.icons.filled.AccountTree
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -99,17 +98,15 @@ private fun ToolCardItem(
     
     AnimatedVisibility(
         visible = !isRemoved,
+        enter = fadeIn(animationSpec = tween(durationMillis = 300)) + 
+                scaleIn(animationSpec = tween(durationMillis = 300), initialScale = 0.8f),
         exit = fadeOut(animationSpec = tween(durationMillis = 300)) + 
                 scaleOut(animationSpec = tween(durationMillis = 300), targetScale = 0.8f)
     ) {
         Card(
             modifier = Modifier
                 .width(100.dp)
-                .clickable(onClick = onClick)
-                .animateEnterExit(
-                    enter = fadeIn(animationSpec = tween(durationMillis = 300)) + 
-                            scaleIn(animationSpec = tween(durationMillis = 300), initialScale = 0.8f)
-                ),
+                .clickable(onClick = onClick),
             shape = RoundedCornerShape(12.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
         ) {

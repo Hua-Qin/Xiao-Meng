@@ -1076,7 +1076,11 @@ val actualViewModel: ChatViewModel = viewModel ?: viewModel { ChatViewModel(cont
                             }
                         },
                         onAttachFile = { actualViewModel.updateAttachmentPanelState(true) },
-                        onStartVoiceInput = { actualViewModel.startVoiceInput() },
+                        onStartVoiceInput = { 
+                            actualViewModel.launchFullscreenVoiceModeWithPermissionCheck(
+                                requestMicrophonePermissionLauncher
+                            )
+                        },
                         onModelChange = { /* 模型切换逻辑 */ },
                         currentModel = modelName,
                         isLoading = isLoading

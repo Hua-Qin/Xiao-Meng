@@ -13,11 +13,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ai.assistance.operit.R
 
 sealed class NavigationItem {
     object Chat : NavigationItem()
@@ -59,7 +57,7 @@ fun NewChatScreenHeader(
             ) {
                 NavigationButton(
                     icon = Icons.Default.Task,
-                    label = stringResource(R.string.tasks),
+                    label = "任务",
                     isSelected = selectedItem == NavigationItem.Tasks,
                     onClick = {
                         selectedItem = NavigationItem.Tasks
@@ -69,7 +67,7 @@ fun NewChatScreenHeader(
                 
                 NavigationButton(
                     icon = Icons.Default.Work,
-                    label = stringResource(R.string.skills),
+                    label = "技能",
                     isSelected = selectedItem == NavigationItem.Skills,
                     onClick = {
                         selectedItem = NavigationItem.Skills
@@ -79,7 +77,7 @@ fun NewChatScreenHeader(
                 
                 NavigationButton(
                     icon = Icons.Default.Star,
-                    label = stringResource(R.string.favorites),
+                    label = "收藏",
                     isSelected = selectedItem == NavigationItem.Favorites,
                     onClick = {
                         selectedItem = NavigationItem.Favorites
