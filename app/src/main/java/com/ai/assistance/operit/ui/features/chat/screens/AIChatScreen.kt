@@ -67,6 +67,10 @@ import com.ai.assistance.operit.ui.features.chat.components.ExportCompleteDialog
 import com.ai.assistance.operit.ui.features.chat.components.ExportPlatformDialog
 import com.ai.assistance.operit.ui.features.chat.components.ExportProgressDialog
 import com.ai.assistance.operit.ui.features.chat.components.WindowsExportDialog
+import com.ai.assistance.operit.ui.features.chat.components.NewChatScreenHeader
+import com.ai.assistance.operit.ui.features.chat.components.GreetingAndToolsSection
+import com.ai.assistance.operit.ui.features.chat.components.NewChatInputSection
+import com.ai.assistance.operit.ui.features.chat.components.NavigationItem
 import com.ai.assistance.operit.ui.features.chat.webview.workspace.WorkspaceScreen
 import com.ai.assistance.operit.ui.features.chat.webview.WorkspaceFileSelector
 import com.ai.assistance.operit.ui.features.chat.webview.computer.ComputerScreen
@@ -846,244 +850,7 @@ val actualViewModel: ChatViewModel = viewModel ?: viewModel { ChatViewModel(cont
                 containerColor = Color.Transparent,
                 snackbarHost = { SnackbarHost(snackbarHostState) },
                 bottomBar = {
-                    // 只在不显示配置界面时显示底部输入框
-                    if (!showConfig) {
-                        // ChatInputSection is back in the bottomBar to reserve space
-                        Box(
-                                modifier = Modifier.onGloballyPositioned {
-                                    bottomBarHeightPx = it.size.height
-                                }
-                        ) {
-                            if (inputStyle == UserPreferencesManager.INPUT_STYLE_AGENT) {
-                                AgentChatInputSection(
-                                        actualViewModel = actualViewModel,
-                                        userMessage = userMessage,
-                                        onUserMessageChange = {
-                                            actualViewModel.updateUserMessage(it)
-                                        },
-                                        enableEnterToSend = enableEnterToSend,
-                                        onSendMessage = {
-                                            if (currentChatId.isNullOrBlank()) {
-                                                Toast.makeText(
-                                                        context,
-                                                        context.getString(
-                                                                R.string.chat_please_create_new_chat
-                                                        ),
-                                                        Toast.LENGTH_SHORT
-                                                ).show()
-                                            } else {
-                                                focusManager.clearFocus()
-                                                actualViewModel.sendUserMessage()
-                                                actualViewModel.resetAttachmentPanelState()
-                                                autoScrollToBottom = true
-                                            }
-                                        },
-                                        onQueueMessage = { enqueueDraftToPendingQueue() },
-                                        onCancelMessage = {
-                                            actualViewModel.cancelCurrentMessage()
-                                        },
-                                        isLoading = isLoading,
-                                        inputState = inputProcessingState,
-                                        allowTextInputWhileProcessing = true,
-                                        onAttachmentRequest = { filePath ->
-                                            actualViewModel.handleAttachment(filePath)
-                                        },
-                                        attachments = attachments,
-                                        onRemoveAttachment = { filePath ->
-                                            actualViewModel.removeAttachment(filePath)
-                                        },
-                                        onInsertAttachment = { attachment: AttachmentInfo ->
-                                            actualViewModel.insertAttachmentReference(attachment)
-                                        },
-                                        onAttachScreenContent = {
-                                            actualViewModel.captureScreenContent()
-                                        },
-                                        onAttachNotifications = {
-                                            actualViewModel.captureNotifications()
-                                        },
-                                        onAttachLocation = { actualViewModel.captureLocation() },
-                                        onAttachMemory = { showMemoryFolderDialog = true },
-                                        onTakePhoto = { uri ->
-                                            actualViewModel.handleTakenPhoto(uri)
-                                        },
-                                        hasBackgroundImage = effectiveHasBackgroundImage,
-                                        chatInputTransparent = chatInputTransparent,
-                                        externalAttachmentPanelState = attachmentPanelState,
-                                        onAttachmentPanelStateChange = { newState ->
-                                            actualViewModel.updateAttachmentPanelState(newState)
-                                        },
-                                        showInputProcessingStatus = showInputProcessingStatus,
-                                        enableTools = enableTools,
-                                        replyToMessage = replyToMessage,
-                                        onClearReply = {
-                                            actualViewModel.clearReplyToMessage()
-                                        },
-                                        isWorkspaceOpen = isWorkspaceOpen,
-                                        enableThinkingMode = enableThinkingMode,
-                                        onToggleThinkingMode = {
-                                            actualViewModel.toggleThinkingMode()
-                                        },
-                                        enableThinkingGuidance = enableThinkingGuidance,
-                                        onToggleThinkingGuidance = {
-                                            actualViewModel.toggleThinkingGuidance()
-                                        },
-                                        enableMaxContextMode = enableMaxContextMode,
-                                        onToggleEnableMaxContextMode = {
-                                            actualViewModel.toggleEnableMaxContextMode()
-                                        },
-                                        featureStates = featureStates,
-                                        onToggleFeature = { featureKey ->
-                                            actualViewModel.toggleFeature(featureKey)
-                                        },
-                                        permissionLevel =
-                                                actualViewModel.masterPermissionLevel
-                                                        .collectAsState()
-                                                        .value,
-                                        onTogglePermission = { actualViewModel.toggleMasterPermission() },
-                                        enableMemoryQuery = enableMemoryQuery,
-                                        onToggleMemoryQuery = { actualViewModel.toggleMemoryQuery() },
-                                        isAutoReadEnabled = isAutoReadEnabled,
-                                        onToggleAutoRead = { actualViewModel.toggleAutoRead() },
-                                        onToggleTools = { actualViewModel.toggleTools() },
-                                        disableStreamOutput = disableStreamOutput,
-                                        onToggleDisableStreamOutput = {
-                                            actualViewModel.toggleDisableStreamOutput()
-                                        },
-                                        disableUserPreferenceDescription =
-                                                disableUserPreferenceDescription,
-                                        onToggleDisableUserPreferenceDescription = {
-                                            actualViewModel.toggleDisableUserPreferenceDescription()
-                                        },
-                                        disableLatexDescription = disableLatexDescription,
-                                        onToggleDisableLatexDescription = {
-                                            actualViewModel.toggleDisableLatexDescription()
-                                        },
-                                        onNavigateToUserPreferences = onNavigateToUserPreferences,
-                                        onNavigateToPackageManager = onNavigateToPackageManager,
-                                        toolPromptVisibility = toolPromptVisibility,
-                                        onSaveToolPromptVisibilityMap = { visibilityMap ->
-                                            actualViewModel.saveToolPromptVisibilityMap(visibilityMap)
-                                        },
-                                        onManualMemoryUpdate = {
-                                            actualViewModel.manuallyUpdateMemory()
-                                        },
-                                        onNavigateToModelConfig = onNavigateToModelConfig,
-                                        characterCardBoundChatModelConfigId = characterCardBoundChatModelConfigId,
-                                        characterCardBoundChatModelIndex = characterCardBoundChatModelIndex,
-                                        pendingQueueMessages = pendingQueueMessages,
-                                        isPendingQueueExpanded = isPendingQueueExpanded,
-                                        onPendingQueueExpandedChange = { isPendingQueueExpanded = it },
-                                        onDeletePendingQueueMessage = { id ->
-                                            removePendingQueueMessageById(id)
-                                        },
-                                        onEditPendingQueueMessage = { id ->
-                                            removePendingQueueMessageById(id)?.let { queueItem ->
-                                                val text = queueItem.text
-                                                actualViewModel.updateUserMessage(
-                                                    TextFieldValue(
-                                                        text = text,
-                                                        selection = TextRange(text.length)
-                                                    )
-                                                )
-                                            }
-                                        },
-                                        onSendPendingQueueMessage = { id ->
-                                            removePendingQueueMessageById(id)?.let { queueItem ->
-                                                sendQueuedItemNow(queueItem, true)
-                                            }
-                                        },
-                                )
-                            } else {
-                                ClassicChatInputSection(
-                                        actualViewModel = actualViewModel,
-                                        userMessage = userMessage,
-                                        onUserMessageChange = {
-                                            actualViewModel.updateUserMessage(it)
-                                        },
-                                        enableEnterToSend = enableEnterToSend,
-                                        onSendMessage = {
-                                            if (currentChatId.isNullOrBlank()) {
-                                                Toast.makeText(
-                                                        context,
-                                                        context.getString(
-                                                                R.string.chat_please_create_new_chat
-                                                        ),
-                                                        Toast.LENGTH_SHORT
-                                                ).show()
-                                            } else {
-                                                focusManager.clearFocus()
-                                                actualViewModel.sendUserMessage()
-                                                actualViewModel.resetAttachmentPanelState()
-                                                autoScrollToBottom = true
-                                            }
-                                        },
-                                        onQueueMessage = { enqueueDraftToPendingQueue() },
-                                        onCancelMessage = {
-                                            actualViewModel.cancelCurrentMessage()
-                                        },
-                                        isLoading = isLoading,
-                                        inputState = inputProcessingState,
-                                        allowTextInputWhileProcessing = true,
-                                        onAttachmentRequest = { filePath ->
-                                            actualViewModel.handleAttachment(filePath)
-                                        },
-                                        attachments = attachments,
-                                        onRemoveAttachment = { filePath ->
-                                            actualViewModel.removeAttachment(filePath)
-                                        },
-                                        onInsertAttachment = { attachment: AttachmentInfo ->
-                                            actualViewModel.insertAttachmentReference(attachment)
-                                        },
-                                        onAttachScreenContent = {
-                                            actualViewModel.captureScreenContent()
-                                        },
-                                        onAttachNotifications = {
-                                            actualViewModel.captureNotifications()
-                                        },
-                                        onAttachLocation = { actualViewModel.captureLocation() },
-                                        onAttachMemory = { showMemoryFolderDialog = true },
-                                        onTakePhoto = { uri ->
-                                            actualViewModel.handleTakenPhoto(uri)
-                                        },
-                                        hasBackgroundImage = effectiveHasBackgroundImage,
-                                        chatInputTransparent = chatInputTransparent,
-                                        externalAttachmentPanelState = attachmentPanelState,
-                                        onAttachmentPanelStateChange = { newState ->
-                                            actualViewModel.updateAttachmentPanelState(newState)
-                                        },
-                                        showInputProcessingStatus = showInputProcessingStatus,
-                                        enableTools = enableTools,
-                                        replyToMessage = replyToMessage,
-                                        onClearReply = {
-                                            actualViewModel.clearReplyToMessage()
-                                        },
-                                        isWorkspaceOpen = isWorkspaceOpen,
-                                        pendingQueueMessages = pendingQueueMessages,
-                                        isPendingQueueExpanded = isPendingQueueExpanded,
-                                        onPendingQueueExpandedChange = { isPendingQueueExpanded = it },
-                                        onDeletePendingQueueMessage = { id ->
-                                            removePendingQueueMessageById(id)
-                                        },
-                                        onEditPendingQueueMessage = { id ->
-                                            removePendingQueueMessageById(id)?.let { queueItem ->
-                                                val text = queueItem.text
-                                                actualViewModel.updateUserMessage(
-                                                    TextFieldValue(
-                                                        text = text,
-                                                        selection = TextRange(text.length)
-                                                    )
-                                                )
-                                            }
-                                        },
-                                        onSendPendingQueueMessage = { id ->
-                                            removePendingQueueMessageById(id)?.let { queueItem ->
-                                                sendQueuedItemNow(queueItem, true)
-                                            }
-                                        }
-                                )
-                            }
-                        }
-                    }
+                    // 底部输入区已集成到主内容中
                 }
         ) { paddingValues ->
             // 根据前面的逻辑条件决定是否显示配置界面
@@ -1131,6 +898,20 @@ val actualViewModel: ChatViewModel = viewModel ?: viewModel { ChatViewModel(cont
                 // The main content area is now a Box to allow overlaying.
                 // It respects the padding from the Scaffold's bottomBar.
                 Column(modifier = Modifier.fillMaxSize().padding(paddingValues)) {
+                    // 新的顶部导航栏
+                    NewChatScreenHeader(
+                        onNavigate = { item ->
+                            // 导航逻辑
+                        }
+                    )
+                    
+                    // 问候与工具卡片区
+                    GreetingAndToolsSection(
+                        onToolClick = { tool ->
+                            // 工具点击逻辑
+                        }
+                    )
+                    
                     val chatContentImeLiftModifier =
                         if (
                             inputStyle == UserPreferencesManager.INPUT_STYLE_AGENT &&
@@ -1173,10 +954,10 @@ val actualViewModel: ChatViewModel = viewModel ?: viewModel { ChatViewModel(cont
                                 coroutineScope = coroutineScope,
                                 chatHistories = chatHistories,
                                 currentChatId = currentChatId ?: "",
-                                chatHeaderTransparent = chatHeaderTransparent,
+                                chatHeaderTransparent = true, // 使用透明头部，因为我们有新的导航栏
                                 chatHeaderHistoryIconColor = chatHeaderHistoryIconColor,
                                 chatHeaderPipIconColor = chatHeaderPipIconColor,
-                                chatHeaderOverlayMode = chatHeaderOverlayMode,
+                                chatHeaderOverlayMode = false, // 禁用覆盖模式
                                 chatStyle = chatStyle, // Pass chat style
                                 historyListState = historyListState,
                                 onSwitchCharacter = { target ->
@@ -1273,6 +1054,33 @@ val actualViewModel: ChatViewModel = viewModel ?: viewModel { ChatViewModel(cont
                             )
                         }
                     }
+                    
+                    // 新的底部输入区
+                    NewChatInputSection(
+                        userMessage = userMessage,
+                        onUserMessageChange = { actualViewModel.updateUserMessage(it) },
+                        onSendMessage = {
+                            if (currentChatId.isNullOrBlank()) {
+                                Toast.makeText(
+                                        context,
+                                        context.getString(
+                                                R.string.chat_please_create_new_chat
+                                        ),
+                                        Toast.LENGTH_SHORT
+                                ).show()
+                            } else {
+                                focusManager.clearFocus()
+                                actualViewModel.sendUserMessage()
+                                actualViewModel.resetAttachmentPanelState()
+                                autoScrollToBottom = true
+                            }
+                        },
+                        onAttachFile = { actualViewModel.updateAttachmentPanelState(true) },
+                        onStartVoiceInput = { actualViewModel.startVoiceInput() },
+                        onModelChange = { /* 模型切换逻辑 */ },
+                        currentModel = modelName,
+                        isLoading = isLoading
+                    )
                 }
             }
         }
