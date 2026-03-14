@@ -1,57 +1,29 @@
-*.iml
-.gradle
-.gradle-local
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/app/release
-/captures.externalNativeBuild
-.cxx
-local.properties
-node_modules
-package-lock.json
-pnpm-lock.yaml
-temp.json
-temp
-/app/src/main/jniLibs
-/app/src/main/assets/models
-/app/src/main/assets/subpack
+# AI模型文件（超过100MB）
+**/assets/models/models/sherpa-ncnn-streaming-zipformer-bilingual-zh-en-2023-02-13/encoder_jit_trace-pnnx.ncnn.bin
+**/assets/models/models/sherpa-ncnn-streaming-zipformer-bilingual-zh-en-2023-02-13/decoder_jit_trace-pnnx.ncnn.bin
+**/assets/models/models/sherpa-ncnn-streaming-zipformer-bilingual-zh-en-2023-02-13/joiner_jit_trace-pnnx.ncnn.bin
 
-.env
-.env.*
-!.env.*.example
-tools/github/.env
+# JNI库文件
+**/jniLibs/**/*.so
 
-app/src/main/assets/pets
+# 子包中的大文件
+**/assets/subpack/subpack/windows/data/app.so
+**/assets/subpack/subpack/windows/data/flutter_assets/
 
-.gradle
-.idea
-.cursor
-.vscode
-.kotlin
-.windsurf
+# 构建产物
+**/build/
+**/.gradle/
+**/*.apk
 
-tmp
-AGENTS.md
-CLAUDE.md
+# 日志文件
+**/*.log
+**/*.log.*
 
-gradle/gradle-8.7-bin.zip
-gradle/gradle-8.7/*
-gradle/gradle-8.7
+# 临时文件
+**/*.tmp
+**/*.swp
 
-mnn/build/*
-mnn/build
-kls_database.db
-.claude
-.codex
-operit-pc-agent.zip
-.uv-caches
-
-# generated toolpkg bundles
-*.toolpkg
+# IDE文件
+**/.idea/
+**/.vscode/
+**/.DS_Store

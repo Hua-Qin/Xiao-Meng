@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工作区</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <main class="screen-stack">
+            <section class="screen active" data-screen="home">
+                <div class="card hero">
+                    <div class="card-content">
+                        <h2>这是什么？</h2>
+                        <p class="description">这是 Operit 的默认界面。</p>
+                        <p class="description">如果你看到这个，说明你犯了问题：</p>
+                        <ol class="notice-list">
+                            <li>没有绑定刀到工作区，而是直接打开了 html。</li>
+                            <li>没有把入口 html 重命名为 index.html。</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="screen" data-screen="test">
+                <header class="topbar">
+                    <div class="brand">
+                        <div class="brand-mark"></div>
+                        <div>
+                            <h1>AI工作区</h1>
+                            <p class="subtitle">本地 WebView 测试台</p>
+                        </div>
+                    </div>
+                    <div class="status">
+                        <span class="dot online" id="system-indicator"></span>
+                        <span>系统在线</span>
+                    </div>
+                </header>
+
+                <div class="grid">
+                    <section class="card proxy-card">
+                        <div class="card-header">
+                            <h2>CORS / Proxy 测试</h2>
+                            <span id="proxy-indicator" class="indicator"></span>
+                        </div>
+                        <div class="card-content">
+                            <p class="description">发起跨域请求，确认 fetch 注入是否生效。</p>
+                            <div class="row">
+                                <input type="url" id="proxy-url" class="text-input" value="https://www.baidu.com/favicon.ico" placeholder="输入跨域 URL">
+                                <button id="proxy-test-btn" class="btn primary">测试请求</button>
+                            </div>
+                            <div class="result" id="proxy-result">等待测试</div>
+                        </div>
+                    </section>
+
+                    <section class="card storage-card">
+                        <div class="card-header">
+                            <h2>本地存储</h2>
+                            <span id="storage-indicator" class="indicator"></span>
+                        </div>
+                        <div class="card-content">
+                            <p class="description">保存一段文本并重启应用验证持久化。</p>
+                            <div class="row">
+                                <input type="text" id="storage-input" placeholder="输入要保存的内容..." class="text-input">
+                                <button id="save-btn" class="btn primary">保存</button>
+                                <button id="clear-btn" class="btn secondary">清除</button>
+                            </div>
+                            <div class="result">
+                                <div>已保存: <span id="saved-content">无数据</span></div>
+                                <div class="muted">时间: <span id="saved-time">无</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="card download-card">
+                        <div class="card-header">
+                            <h2>下载测试</h2>
+                            <span id="download-indicator" class="indicator"></span>
+                        </div>
+                        <div class="card-content">
+                            <p class="description">验证普通文件与 Blob 下载。</p>
+                            <div class="row">
+                                <button id="download-text-btn" class="btn primary">下载文本</button>
+                                <button id="dynamic-js-download-btn" class="btn secondary">动态下载</button>
+                            </div>
+                            <div class="row">
+                                <input type="text" id="blob-content" placeholder="输入要生成的 Blob 内容..." class="text-input">
+                                <button id="generate-blob-btn" class="btn primary">生成并下载</button>
+                            </div>
+                            <div class="result">
+                                最近下载: <span id="last-download">无</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <footer>
+                    <p>© <span id="year"></span> AI工作平台</p>
+                </footer>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-target="home">主界面</button>
+            <button class="nav-item" data-target="test">测试</button>
+        </nav>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
