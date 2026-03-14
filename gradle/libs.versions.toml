@@ -251,9 +251,6 @@ glance-material3 = { group = "androidx.glance", name = "glance-material3", versi
 androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
 androidx-animation = { group = "androidx.compose.animation", name = "animation", version.ref = "animation" }
 
-android-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
-kotlin-gradle = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }

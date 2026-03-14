@@ -7,14 +7,13 @@ buildscript {
         maven { url = uri("https://maven.objectbox.io/") }
     }
     dependencies {
-        classpath(libs.android.gradle)
-        classpath(libs.kotlin.gradle)
         classpath("io.objectbox:objectbox-gradle-plugin:3.8.0")
     }
 }
 
 plugins {
     alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.kotlin.kapt) apply false
