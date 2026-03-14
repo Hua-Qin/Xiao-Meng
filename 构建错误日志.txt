@@ -1,0 +1,332 @@
+2026-03-14T07:57:30.4806429Z Current runner version: '2.332.0'
+2026-03-14T07:57:30.4831017Z ##[group]Runner Image Provisioner
+2026-03-14T07:57:30.4831967Z Hosted Compute Agent
+2026-03-14T07:57:30.4832487Z Version: 20260213.493
+2026-03-14T07:57:30.4833080Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-14T07:57:30.4833832Z Build Date: 2026-02-13T00:28:41Z
+2026-03-14T07:57:30.4834446Z Worker ID: {8d13b8cf-3bab-45a1-b710-e3e22e40a86d}
+2026-03-14T07:57:30.4835156Z Azure Region: westus
+2026-03-14T07:57:30.4835685Z ##[endgroup]
+2026-03-14T07:57:30.4837348Z ##[group]Operating System
+2026-03-14T07:57:30.4837969Z Ubuntu
+2026-03-14T07:57:30.4838493Z 24.04.3
+2026-03-14T07:57:30.4838930Z LTS
+2026-03-14T07:57:30.4839417Z ##[endgroup]
+2026-03-14T07:57:30.4839849Z ##[group]Runner Image
+2026-03-14T07:57:30.4840463Z Image: ubuntu-24.04
+2026-03-14T07:57:30.4840982Z Version: 20260309.50.1
+2026-03-14T07:57:30.4842179Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260309.50/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-14T07:57:30.4843612Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260309.50
+2026-03-14T07:57:30.4844524Z ##[endgroup]
+2026-03-14T07:57:30.4847356Z ##[group]GITHUB_TOKEN Permissions
+2026-03-14T07:57:30.4849326Z Actions: write
+2026-03-14T07:57:30.4849953Z ArtifactMetadata: write
+2026-03-14T07:57:30.4850566Z Attestations: write
+2026-03-14T07:57:30.4851052Z Checks: write
+2026-03-14T07:57:30.4851568Z Contents: write
+2026-03-14T07:57:30.4852119Z Deployments: write
+2026-03-14T07:57:30.4852594Z Discussions: write
+2026-03-14T07:57:30.4853149Z Issues: write
+2026-03-14T07:57:30.4853622Z Metadata: read
+2026-03-14T07:57:30.4854105Z Models: read
+2026-03-14T07:57:30.4854948Z Packages: write
+2026-03-14T07:57:30.4855479Z Pages: write
+2026-03-14T07:57:30.4856062Z PullRequests: write
+2026-03-14T07:57:30.4856595Z RepositoryProjects: write
+2026-03-14T07:57:30.4857431Z SecurityEvents: write
+2026-03-14T07:57:30.4857923Z Statuses: write
+2026-03-14T07:57:30.4858477Z ##[endgroup]
+2026-03-14T07:57:30.4860518Z Secret source: Actions
+2026-03-14T07:57:30.4861269Z Prepare workflow directory
+2026-03-14T07:57:30.5191989Z Prepare all required actions
+2026-03-14T07:57:30.5232649Z Getting action download info
+2026-03-14T07:57:31.0220326Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-03-14T07:57:31.1759852Z Download action repository 'actions/setup-java@v4' (SHA:c1e323688fd81a25caa38c78aa6df2d33d3e20d9)
+2026-03-14T07:57:31.8584531Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+2026-03-14T07:57:31.9652704Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-03-14T07:57:32.0877933Z Download action repository 'softprops/action-gh-release@v1' (SHA:de2c0eb89ae2a093876385947365aca7b0e5f844)
+2026-03-14T07:57:32.7224614Z Complete job name: build
+2026-03-14T07:57:32.8112855Z ##[group]Run actions/checkout@v4
+2026-03-14T07:57:32.8114164Z with:
+2026-03-14T07:57:32.8114944Z   repository: Hua-Qin/Xiao-Meng
+2026-03-14T07:57:32.8116122Z   token: ***
+2026-03-14T07:57:32.8116863Z   ssh-strict: true
+2026-03-14T07:57:32.8117870Z   ssh-user: git
+2026-03-14T07:57:32.8118673Z   persist-credentials: true
+2026-03-14T07:57:32.8119555Z   clean: true
+2026-03-14T07:57:32.8120350Z   sparse-checkout-cone-mode: true
+2026-03-14T07:57:32.8121320Z   fetch-depth: 1
+2026-03-14T07:57:32.8122072Z   fetch-tags: false
+2026-03-14T07:57:32.8122869Z   show-progress: true
+2026-03-14T07:57:32.8123646Z   lfs: false
+2026-03-14T07:57:32.8124378Z   submodules: false
+2026-03-14T07:57:32.8125181Z   set-safe-directory: true
+2026-03-14T07:57:32.8126328Z ##[endgroup]
+2026-03-14T07:57:32.9234215Z Syncing repository: Hua-Qin/Xiao-Meng
+2026-03-14T07:57:32.9236771Z ##[group]Getting Git version info
+2026-03-14T07:57:32.9238454Z Working directory is '/home/runner/work/Xiao-Meng/Xiao-Meng'
+2026-03-14T07:57:32.9240399Z [command]/usr/bin/git version
+2026-03-14T07:57:32.9358315Z git version 2.53.0
+2026-03-14T07:57:32.9385317Z ##[endgroup]
+2026-03-14T07:57:32.9408430Z Temporarily overriding HOME='/home/runner/work/_temp/1e75e523-8dae-4e52-8fd5-c158cbe02b07' before making global git config changes
+2026-03-14T07:57:32.9411173Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-14T07:57:32.9413791Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Xiao-Meng/Xiao-Meng
+2026-03-14T07:57:32.9452942Z Deleting the contents of '/home/runner/work/Xiao-Meng/Xiao-Meng'
+2026-03-14T07:57:32.9456193Z ##[group]Initializing the repository
+2026-03-14T07:57:32.9461248Z [command]/usr/bin/git init /home/runner/work/Xiao-Meng/Xiao-Meng
+2026-03-14T07:57:32.9550704Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-03-14T07:57:32.9553786Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-03-14T07:57:32.9556601Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-03-14T07:57:32.9559654Z hint: call:
+2026-03-14T07:57:32.9561001Z hint:
+2026-03-14T07:57:32.9562802Z hint: 	git config --global init.defaultBranch <name>
+2026-03-14T07:57:32.9565020Z hint:
+2026-03-14T07:57:32.9567316Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-03-14T07:57:32.9570605Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-03-14T07:57:32.9573087Z hint:
+2026-03-14T07:57:32.9574559Z hint: 	git branch -m <name>
+2026-03-14T07:57:32.9575792Z hint:
+2026-03-14T07:57:32.9576964Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-03-14T07:57:32.9579185Z Initialized empty Git repository in /home/runner/work/Xiao-Meng/Xiao-Meng/.git/
+2026-03-14T07:57:32.9583934Z [command]/usr/bin/git remote add origin https://github.com/Hua-Qin/Xiao-Meng
+2026-03-14T07:57:32.9606927Z ##[endgroup]
+2026-03-14T07:57:32.9609620Z ##[group]Disabling automatic garbage collection
+2026-03-14T07:57:32.9611851Z [command]/usr/bin/git config --local gc.auto 0
+2026-03-14T07:57:32.9642710Z ##[endgroup]
+2026-03-14T07:57:32.9644965Z ##[group]Setting up auth
+2026-03-14T07:57:32.9650621Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-14T07:57:32.9685710Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-14T07:57:33.0014963Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-14T07:57:33.0046955Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-14T07:57:33.0282098Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-14T07:57:33.0314552Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-14T07:57:33.0557554Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-03-14T07:57:33.0595295Z ##[endgroup]
+2026-03-14T07:57:33.0597989Z ##[group]Fetching the repository
+2026-03-14T07:57:33.0607631Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f264b364c03c9377e7f6e09874f67ecc622406c1:refs/remotes/origin/main
+2026-03-14T07:57:38.3265456Z From https://github.com/Hua-Qin/Xiao-Meng
+2026-03-14T07:57:38.3266223Z  * [new ref]         f264b364c03c9377e7f6e09874f67ecc622406c1 -> origin/main
+2026-03-14T07:57:38.3301752Z ##[endgroup]
+2026-03-14T07:57:38.3302514Z ##[group]Determining the checkout info
+2026-03-14T07:57:38.3305297Z ##[endgroup]
+2026-03-14T07:57:38.3310970Z [command]/usr/bin/git sparse-checkout disable
+2026-03-14T07:57:38.3358876Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-03-14T07:57:38.3386334Z ##[group]Checking out the ref
+2026-03-14T07:57:38.3390503Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-03-14T07:57:39.4357242Z Updating files:  15% (298/1925)
+2026-03-14T07:57:39.4370130Z Updating files:  16% (308/1925)
+2026-03-14T07:57:39.4394893Z Updating files:  17% (328/1925)
+2026-03-14T07:57:39.4421156Z Updating files:  18% (347/1925)
+2026-03-14T07:57:39.4438561Z Updating files:  19% (366/1925)
+2026-03-14T07:57:39.4457483Z Updating files:  20% (385/1925)
+2026-03-14T07:57:39.4475151Z Updating files:  21% (405/1925)
+2026-03-14T07:57:39.5561700Z Updating files:  22% (424/1925)
+2026-03-14T07:57:39.7125761Z Updating files:  23% (443/1925)
+2026-03-14T07:57:39.8964497Z Updating files:  24% (462/1925)
+2026-03-14T07:57:40.1129381Z Updating files:  25% (482/1925)
+2026-03-14T07:57:40.3738779Z Updating files:  26% (501/1925)
+2026-03-14T07:57:40.3993843Z Updating files:  26% (508/1925)
+2026-03-14T07:57:40.5003635Z Updating files:  27% (520/1925)
+2026-03-14T07:57:40.7583090Z Updating files:  28% (539/1925)
+2026-03-14T07:57:40.9086155Z Updating files:  29% (559/1925)
+2026-03-14T07:57:41.1336625Z Updating files:  30% (578/1925)
+2026-03-14T07:57:41.4285769Z Updating files:  31% (597/1925)
+2026-03-14T07:57:41.4530528Z Updating files:  31% (609/1925)
+2026-03-14T07:57:41.5557316Z Updating files:  32% (616/1925)
+2026-03-14T07:57:41.6978704Z Updating files:  33% (636/1925)
+2026-03-14T07:57:41.9052754Z Updating files:  34% (655/1925)
+2026-03-14T07:57:42.1375134Z Updating files:  35% (674/1925)
+2026-03-14T07:57:42.4835588Z Updating files:  36% (693/1925)
+2026-03-14T07:57:42.6066968Z Updating files:  37% (713/1925)
+2026-03-14T07:57:42.6106787Z Updating files:  38% (732/1925)
+2026-03-14T07:57:42.6132063Z Updating files:  39% (751/1925)
+2026-03-14T07:57:42.7288363Z Updating files:  40% (770/1925)
+2026-03-14T07:57:42.8915082Z Updating files:  41% (790/1925)
+2026-03-14T07:57:43.1448338Z Updating files:  42% (809/1925)
+2026-03-14T07:57:43.3203267Z Updating files:  43% (828/1925)
+2026-03-14T07:57:43.5454092Z Updating files:  44% (847/1925)
+2026-03-14T07:57:43.5780717Z Updating files:  44% (852/1925)
+2026-03-14T07:57:43.6704416Z Updating files:  45% (867/1925)
+2026-03-14T07:57:43.6721476Z Updating files:  46% (886/1925)
+2026-03-14T07:57:43.6738447Z Updating files:  47% (905/1925)
+2026-03-14T07:57:43.6758150Z Updating files:  48% (924/1925)
+2026-03-14T07:57:43.6783150Z Updating files:  49% (944/1925)
+2026-03-14T07:57:43.6802647Z Updating files:  50% (963/1925)
+2026-03-14T07:57:43.6814384Z Updating files:  51% (982/1925)
+2026-03-14T07:57:43.6835397Z Updating files:  52% (1001/1925)
+2026-03-14T07:57:43.6860378Z Updating files:  53% (1021/1925)
+2026-03-14T07:57:43.6880678Z Updating files:  54% (1040/1925)
+2026-03-14T07:57:43.6900426Z Updating files:  55% (1059/1925)
+2026-03-14T07:57:43.6920575Z Updating files:  56% (1078/1925)
+2026-03-14T07:57:43.7600738Z Updating files:  57% (1098/1925)
+2026-03-14T07:57:43.9559256Z Updating files:  58% (1117/1925)
+2026-03-14T07:57:44.1410797Z Updating files:  59% (1136/1925)
+2026-03-14T07:57:44.3296888Z Updating files:  60% (1155/1925)
+2026-03-14T07:57:44.3599787Z Updating files:  61% (1175/1925)
+2026-03-14T07:57:44.6473657Z Updating files:  61% (1177/1925)
+2026-03-14T07:57:44.7480297Z Updating files:  62% (1194/1925)
+2026-03-14T07:57:44.7495048Z Updating files:  63% (1213/1925)
+2026-03-14T07:57:44.8135764Z Updating files:  64% (1232/1925)
+2026-03-14T07:57:45.0100967Z Updating files:  65% (1252/1925)
+2026-03-14T07:57:45.1952793Z Updating files:  66% (1271/1925)
+2026-03-14T07:57:45.3785612Z Updating files:  67% (1290/1925)
+2026-03-14T07:57:45.3822419Z Updating files:  67% (1305/1925)
+2026-03-14T07:57:45.7003447Z Updating files:  68% (1309/1925)
+2026-03-14T07:57:45.8023965Z Updating files:  69% (1329/1925)
+2026-03-14T07:57:45.8079489Z Updating files:  70% (1348/1925)
+2026-03-14T07:57:45.8109049Z Updating files:  71% (1367/1925)
+2026-03-14T07:57:45.8134681Z Updating files:  72% (1386/1925)
+2026-03-14T07:57:45.8252842Z Updating files:  73% (1406/1925)
+2026-03-14T07:57:45.9402430Z Updating files:  74% (1425/1925)
+2026-03-14T07:57:45.9418556Z Updating files:  75% (1444/1925)
+2026-03-14T07:57:45.9433127Z Updating files:  76% (1463/1925)
+2026-03-14T07:57:45.9447338Z Updating files:  77% (1483/1925)
+2026-03-14T07:57:45.9469136Z Updating files:  78% (1502/1925)
+2026-03-14T07:57:45.9491268Z Updating files:  79% (1521/1925)
+2026-03-14T07:57:45.9507661Z Updating files:  80% (1540/1925)
+2026-03-14T07:57:45.9529678Z Updating files:  81% (1560/1925)
+2026-03-14T07:57:45.9548296Z Updating files:  82% (1579/1925)
+2026-03-14T07:57:45.9563329Z Updating files:  83% (1598/1925)
+2026-03-14T07:57:45.9578302Z Updating files:  84% (1617/1925)
+2026-03-14T07:57:45.9590422Z Updating files:  85% (1637/1925)
+2026-03-14T07:57:45.9608783Z Updating files:  86% (1656/1925)
+2026-03-14T07:57:45.9620506Z Updating files:  87% (1675/1925)
+2026-03-14T07:57:45.9640017Z Updating files:  88% (1694/1925)
+2026-03-14T07:57:45.9659382Z Updating files:  89% (1714/1925)
+2026-03-14T07:57:45.9677593Z Updating files:  90% (1733/1925)
+2026-03-14T07:57:45.9692719Z Updating files:  91% (1752/1925)
+2026-03-14T07:57:45.9714062Z Updating files:  92% (1771/1925)
+2026-03-14T07:57:45.9732512Z Updating files:  93% (1791/1925)
+2026-03-14T07:57:45.9745588Z Updating files:  94% (1810/1925)
+2026-03-14T07:57:45.9759378Z Updating files:  95% (1829/1925)
+2026-03-14T07:57:45.9772525Z Updating files:  96% (1848/1925)
+2026-03-14T07:57:45.9788259Z Updating files:  97% (1868/1925)
+2026-03-14T07:57:45.9802099Z Updating files:  98% (1887/1925)
+2026-03-14T07:57:45.9847589Z Updating files:  99% (1906/1925)
+2026-03-14T07:57:45.9848117Z Updating files: 100% (1925/1925)
+2026-03-14T07:57:45.9848651Z Updating files: 100% (1925/1925), done.
+2026-03-14T07:57:45.9882955Z Switched to a new branch 'main'
+2026-03-14T07:57:45.9886258Z branch 'main' set up to track 'origin/main'.
+2026-03-14T07:57:45.9942760Z ##[endgroup]
+2026-03-14T07:57:45.9984966Z [command]/usr/bin/git log -1 --format=%H
+2026-03-14T07:57:46.0008732Z f264b364c03c9377e7f6e09874f67ecc622406c1
+2026-03-14T07:57:46.0260152Z ##[group]Run actions/setup-java@v4
+2026-03-14T07:57:46.0260424Z with:
+2026-03-14T07:57:46.0260602Z   java-version: 17
+2026-03-14T07:57:46.0260800Z   distribution: temurin
+2026-03-14T07:57:46.0260999Z   java-package: jdk
+2026-03-14T07:57:46.0261191Z   check-latest: false
+2026-03-14T07:57:46.0261376Z   server-id: github
+2026-03-14T07:57:46.0261573Z   server-username: GITHUB_ACTOR
+2026-03-14T07:57:46.0261806Z   server-password: GITHUB_TOKEN
+2026-03-14T07:57:46.0262050Z   overwrite-settings: true
+2026-03-14T07:57:46.0262272Z   job-status: success
+2026-03-14T07:57:46.0262586Z   token: ***
+2026-03-14T07:57:46.0262775Z ##[endgroup]
+2026-03-14T07:57:46.2245393Z ##[group]Installed distributions
+2026-03-14T07:57:46.2304726Z Resolved Java 17.0.18+8 from tool-cache
+2026-03-14T07:57:46.2305660Z Setting Java 17.0.18+8 as the default
+2026-03-14T07:57:46.2319585Z Creating toolchains.xml for JDK version 17 from temurin
+2026-03-14T07:57:46.2398080Z Writing to /home/runner/.m2/toolchains.xml
+2026-03-14T07:57:46.2398572Z 
+2026-03-14T07:57:46.2398748Z Java configuration:
+2026-03-14T07:57:46.2399323Z   Distribution: temurin
+2026-03-14T07:57:46.2399711Z   Version: 17.0.18+8
+2026-03-14T07:57:46.2400688Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-03-14T07:57:46.2401206Z 
+2026-03-14T07:57:46.2401985Z ##[endgroup]
+2026-03-14T07:57:46.2419299Z Creating settings.xml with server-id: github
+2026-03-14T07:57:46.2423745Z Writing to /home/runner/.m2/settings.xml
+2026-03-14T07:57:46.2532658Z ##[group]Run chmod +x gradlew
+2026-03-14T07:57:46.2532981Z [36;1mchmod +x gradlew[0m
+2026-03-14T07:57:46.2587457Z shell: /usr/bin/bash -e {0}
+2026-03-14T07:57:46.2587714Z env:
+2026-03-14T07:57:46.2588005Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-03-14T07:57:46.2588506Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-03-14T07:57:46.2588891Z ##[endgroup]
+2026-03-14T07:57:46.6201867Z ##[group]Run actions/cache@v4
+2026-03-14T07:57:46.6202112Z with:
+2026-03-14T07:57:46.6202500Z   path: ~/.gradle/caches
+~/.gradle/wrapper
+
+2026-03-14T07:57:46.6202938Z   key: Linux-gradle-69fce8f435db0aa8851858985c9a674503ab1caf97dc5060dd802ff53b2092bf
+2026-03-14T07:57:46.6203381Z   restore-keys: Linux-gradle-
+
+2026-03-14T07:57:46.6203622Z   enableCrossOsArchive: false
+2026-03-14T07:57:46.6203844Z   fail-on-cache-miss: false
+2026-03-14T07:57:46.6204058Z   lookup-only: false
+2026-03-14T07:57:46.6204241Z   save-always: false
+2026-03-14T07:57:46.6204417Z env:
+2026-03-14T07:57:46.6204693Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-03-14T07:57:46.6205150Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-03-14T07:57:46.6205502Z ##[endgroup]
+2026-03-14T07:57:47.0251209Z Cache not found for input keys: Linux-gradle-69fce8f435db0aa8851858985c9a674503ab1caf97dc5060dd802ff53b2092bf, Linux-gradle-
+2026-03-14T07:57:47.0324068Z ##[group]Run ./gradlew clean
+2026-03-14T07:57:47.0324353Z [36;1m./gradlew clean[0m
+2026-03-14T07:57:47.0373509Z shell: /usr/bin/bash -e {0}
+2026-03-14T07:57:47.0373755Z env:
+2026-03-14T07:57:47.0374057Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-03-14T07:57:47.0374564Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.18-8/x64
+2026-03-14T07:57:47.0374941Z ##[endgroup]
+2026-03-14T07:57:47.2134710Z Downloading https://mirrors.aliyun.com/macports/distfiles/gradle/gradle-8.13-bin.zip
+2026-03-14T07:57:51.7498159Z .............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+2026-03-14T07:57:53.2463902Z 
+2026-03-14T07:57:53.2464337Z Welcome to Gradle 8.13!
+2026-03-14T07:57:53.2464645Z 
+2026-03-14T07:57:53.2464832Z Here are the highlights of this release:
+2026-03-14T07:57:53.2465483Z  - Daemon JVM auto-provisioning
+2026-03-14T07:57:53.2467670Z  - Enhancements for Scala plugin and JUnit testing
+2026-03-14T07:57:53.2471956Z  - Improvements for build authors and plugin developers
+2026-03-14T07:57:53.2473379Z 
+2026-03-14T07:57:53.2477956Z For more details see https://docs.gradle.org/8.13/release-notes.html
+2026-03-14T07:57:53.2478483Z 
+2026-03-14T07:57:53.3452629Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-03-14T07:57:55.0455582Z Configuration on demand is an incubating feature.
+2026-03-14T07:58:53.5458467Z 
+2026-03-14T07:58:53.5490317Z > Configure project :
+2026-03-14T07:58:53.5491528Z w: file:///home/runner/work/Xiao-Meng/Xiao-Meng/build.gradle.kts:11:24: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+2026-03-14T07:58:54.6470645Z 
+2026-03-14T07:58:54.6471166Z FAILURE: Build failed with an exception.
+2026-03-14T07:58:54.6471556Z 
+2026-03-14T07:58:54.6471678Z * Where:
+2026-03-14T07:58:54.6472193Z Build file '/home/runner/work/Xiao-Meng/Xiao-Meng/app/build.gradle.kts' line: 1
+2026-03-14T07:58:54.6472863Z 
+2026-03-14T07:58:54.6473942Z * What went wrong:
+2026-03-14T07:58:54.6474618Z Plugin [id: 'io.objectbox', version: '3.8.0'] was not found in any of the following sources:
+2026-03-14T07:58:54.6475256Z 
+2026-03-14T07:58:54.6486342Z - Gradle Core Plugins (plugin is not in 'org.gradle' namespace)
+2026-03-14T07:58:54.6487267Z - Included Builds (No included builds contain this plugin)
+2026-03-14T07:58:54.6491909Z - Plugin Repositories (could not resolve plugin artifact 'io.objectbox:io.objectbox.gradle.plugin:3.8.0')
+2026-03-14T07:58:54.6492715Z   Searched in the following repositories:
+2026-03-14T07:58:54.6493095Z     Google
+2026-03-14T07:58:54.6493486Z     Gradle Central Plugin Repository
+2026-03-14T07:58:54.6499831Z     MavenRepo
+2026-03-14T07:58:54.6500349Z     maven(https://jitpack.io)
+2026-03-14T07:58:54.6500849Z     maven2(https://maven.objectbox.io/)
+2026-03-14T07:58:54.6501233Z 
+2026-03-14T07:58:54.6501492Z * Try:
+2026-03-14T07:58:54.6501842Z > Run with --stacktrace option to get the stack trace.
+2026-03-14T07:58:54.6502404Z > Run with --info or --debug option to get more log output.
+2026-03-14T07:58:54.6502994Z > Run with --scan to get full insights.
+2026-03-14T07:58:54.6508777Z > Get more help at https://help.gradle.org.
+2026-03-14T07:58:54.6509135Z 
+2026-03-14T07:58:54.6509271Z BUILD FAILED in 1m 7s
+2026-03-14T07:58:55.0901197Z ##[error]Process completed with exit code 1.
+2026-03-14T07:58:55.1060012Z Post job cleanup.
+2026-03-14T07:58:55.2866851Z Post job cleanup.
+2026-03-14T07:58:55.3940514Z [command]/usr/bin/git version
+2026-03-14T07:58:55.3982473Z git version 2.53.0
+2026-03-14T07:58:55.4030534Z Temporarily overriding HOME='/home/runner/work/_temp/6c525592-7b71-4bf6-a06c-32e217118491' before making global git config changes
+2026-03-14T07:58:55.4031833Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-14T07:58:55.4044700Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Xiao-Meng/Xiao-Meng
+2026-03-14T07:58:55.4084785Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-14T07:58:55.4121766Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-14T07:58:55.4395630Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-14T07:58:55.4419828Z http.https://github.com/.extraheader
+2026-03-14T07:58:55.4435848Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-03-14T07:58:55.4467957Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-14T07:58:55.4707400Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-14T07:58:55.4740301Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-14T07:58:55.5094565Z Cleaning up orphan processes
+2026-03-14T07:58:55.5286621Z Terminate orphan process: pid (2402) (java)
+2026-03-14T07:58:55.5300354Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/cache@v4, actions/checkout@v4, actions/setup-java@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

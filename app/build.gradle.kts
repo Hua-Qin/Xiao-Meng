@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.objectbox)
+    id("io.objectbox") version "3.8.0"
     alias(libs.plugins.kotlin.kapt)
 }
 

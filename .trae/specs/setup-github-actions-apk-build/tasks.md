@@ -61,13 +61,13 @@
   - [x] SubTask 11.2: 验证Maven仓库配置
   - [x] SubTask 11.3: 修复任何版本冲突或缺失依赖
 
-- [ ] Task 12: 创建GitHub Actions工作流配置
-  - [ ] SubTask 12.1: 创建.github/workflows/android-build.yml文件
-  - [ ] SubTask 12.2: 配置构建触发条件（push、pull_request）
-  - [ ] SubTask 12.3: 设置Java JDK环境
-  - [ ] SubTask 12.4: 配置Gradle缓存和构建命令
-  - [ ] SubTask 12.5: 配置APK上传到Artifacts
-  - [ ] SubTask 12.6: 配置Release APK上传到Releases（可选）
+- [x] Task 12: 创建GitHub Actions工作流配置
+  - [x] SubTask 12.1: 创建.github/workflows/android-build.yml文件
+  - [x] SubTask 12.2: 配置构建触发条件（push、pull_request）
+  - [x] SubTask 12.3: 设置Java JDK环境
+  - [x] SubTask 12.4: 配置Gradle缓存和构建命令
+  - [x] SubTask 12.5: 配置APK上传到Artifacts
+  - [x] SubTask 12.6: 配置Release APK上传到Releases（可选）
 
 - [ ] Task 13: 本地测试构建（可选）
   - [ ] SubTask 13.1: 执行gradlew clean验证配置
@@ -75,10 +75,10 @@
   - [ ] SubTask 13.3: 检查构建日志并修复错误
   - [ ] SubTask 13.4: 验证生成的APK文件
 
-- [ ] Task 14: 推送代码触发GitHub Actions构建
-  - [ ] SubTask 14.1: 提交所有构建配置文件
-  - [ ] SubTask 14.2: 推送到GitHub触发构建
-  - [ ] SubTask 14.3: 监控GitHub Actions构建状态
+- [x] Task 14: 推送代码触发GitHub Actions构建
+  - [x] SubTask 14.1: 提交所有构建配置文件
+  - [x] SubTask 14.2: 推送到GitHub触发构建
+  - [x] SubTask 14.3: 监控GitHub Actions构建状态
   - [ ] SubTask 14.4: 下载并测试生成的APK
 
 # Task Dependencies
