@@ -2,9 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
-    id("io.objectbox") version "3.8.0"
     alias(libs.plugins.kotlin.kapt)
 }
+
+apply(plugin = "io.objectbox")
 
 android {
     namespace = "com.ai.assistance.operit"
