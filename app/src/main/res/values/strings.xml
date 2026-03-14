@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Operit</string>
+    
+    <!-- OpenAI Provider Strings -->
+    <string name="openai_error_request_cancelled">请求已取消</string>
+    <string name="openai_error_no_error_details">无错误详情</string>
+    <string name="openai_error_api_request_failed_with_status">API请求失败，状态码: %d，错误: %s</string>
+    <string name="openai_error_timeout_max_retries">请求超时，已达到最大重试次数。错误: %s</string>
+    <string name="openai_error_cannot_connect">无法连接到服务器</string>
+    <string name="openai_error_max_retries">请求失败，已达到最大重试次数。错误: %s</string>
+    <string name="openai_error_response_failed">响应失败: %s</string>
+    <string name="openai_error_connection_timeout">连接超时，已重试%d次，最后错误: %s</string>
+    <string name="openai_connection_success">连接成功</string>
+    <string name="openai_connection_test_failed">连接测试失败: %s</string>
+    <string name="openai_error_parse_response_failed">解析响应失败: %s</string>
+    <string name="openai_retry_with_count">【重试 %s，重试次数: %d】</string>
+    <string name="openai_error">OpenAI错误</string>
+    <string name="openai_audio_video_omitted">音频和视频内容已被省略</string>
+    <string name="openai_image_omitted">图片内容已被省略</string>
+    
+    <!-- Gemini Provider Strings -->
+    <string name="gemini_connecting">正在连接…</string>
+    <string name="gemini_error_request_cancelled">请求已取消</string>
+    <string name="gemini_connected_success">连接成功</string>
+    <string name="gemini_error_no_error_details">无错误详情</string>
+    <string name="gemini_error_api_request_failed">API请求失败，状态码: %d，错误: %s</string>
+    <string name="gemini_error_timeout_max_retries">请求超时，已达到最大重试次数。错误: %s</string>
+    <string name="gemini_network_timeout_retry">网络超时，正在重试… (第%d次)</string>
+    <string name="gemini_error_cannot_connect">无法连接到服务器</string>
+    <string name="gemini_network_unstable_retry">网络不稳定，正在重试… (第%d次)</string>
+    <string name="gemini_error_max_retries">请求失败，已达到最大重试次数。错误: %s</string>
+    <string name="gemini_network_interrupted_retry">网络中断，正在重试… (第%d次)</string>
+    <string name="gemini_error_response_failed">响应失败: %s</string>
+    <string name="gemini_error_connection_timeout">连接超时，已重试%d次，最后错误: %s</string>
+    <string name="gemini_connection_test_failed">连接测试失败: %s</string>
+    <string name="gemini_connection_success">连接成功</string>
+    <string name="gemini_request_body_json">请求体 (JSON):</string>
+    <string name="gemini_request_headers">请求头: %s</string>
+    <string name="gemini_response_empty">响应为空</string>
+    <string name="gemini_unknown_error">未知错误</string>
+    <string name="gemini_search_sources_title">\n搜索来源:\n</string>
+    <string name="gemini_search_query">搜索查询: %s\n</string>
+    <string name="gemini_reference_sources_title">\n参考来源:\n</string>
+    
+    <!-- Llama Provider Strings -->
+    <string name="llama_error_model_file_not_exist">模型文件不存在: %s</string>
+    <string name="llama_error_create_session_failed">创建会话失败</string>
+    <string name="llama_error_prefix">Llama错误</string>
+    <string name="llama_error_session_create_failed">会话创建失败</string>
+    <string name="llama_error_chat_template_failed">聊天模板失败</string>
+    <string name="llama_error_inference_failed">推理失败</string>
+    <string name="llama_error_inference_tag">\n\n[推理失败]</string>
+    
+    <!-- MNN Provider Strings -->
+    <string name="mnn_model_dir_not_exist">模型目录不存在: %s</string>
+    <string name="mnn_config_not_exist">配置文件不存在: %s</string>
+    <string name="mnn_cannot_create_session">无法创建会话</string>
+    <string name="mnn_user_prompt">用户: %s</string>
+    <string name="mnn_assistant_prompt">助手: %s</string>
+    <string name="mnn_system_prompt">系统: %s</string>
+    <string name="mnn_message_format">%s\n</string>
+    <string name="mnn_assistant">助手</string>
+    <string name="mnn_generic_error">错误: %s</string>
+    <string name="mnn_session_not_initialized">会话未初始化</string>
+    <string name="mnn_reasoning_error">推理错误</string>
+    <string name="mnn_model_not_configured">模型未配置</string>
+    <string name="mnn_model_dir_missing">模型目录缺失: %s</string>
+    <string name="mnn_file_status">文件状态:</string>
+    <string name="mnn_init_failed">初始化失败</string>
+    <string name="mnn_connection_success">连接成功\n模型: %s\n目录: %s\n大小: %s\n%s</string>
+    
+    <!-- Model List Fetcher Strings -->
+    <string name="model_fetch_no_error_details">无错误详情</string>
+    <string name="model_fetch_response_empty">响应为空</string>
+    <string name="model_fetch_api_failed">API请求失败，状态码: %d，错误: %s</string>
+    <string name="modellist_error_cannot_connect">无法连接到模型列表服务器</string>
+    <string name="modellist_error_fetch_failed">获取模型列表失败</string>
+    <string name="modellist_error_missing_data">缺少必要的数据</string>
+    <string name="modellist_error_missing_data_or_models">缺少数据或模型</string>
+    <string name="modellist_error_missing_models">缺少模型</string>
+    
+    <!-- Common Provider Strings -->
+    <string name="provider_error_response_empty">响应为空</string>
+    <string name="provider_error_parsing_failed">解析失败</string>
+    <string name="provider_error_retry_message">重试消息: %s (第%d次)</string>
+    <string name="provider_error_timeout">超时</string>
+    <string name="provider_error_unknown_host">未知主机</string>
+    <string name="provider_error_network_interrupted">网络中断</string>
+    
+    <!-- Media Link Builder Strings -->
+    <string name="conversation_media_image_link">[图片: %s]</string>
+    <string name="conversation_media_audio_link">[音频: %s]</string>
+    <string name="conversation_media_video_link">[视频: %s]</string>
+    
+    <!-- Common UI Strings -->
+    <string name="unknown_error">未知错误</string>
+    <string name="request_failed">请求失败</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="retry">重试</string>
+    <string name="loading">加载中…</string>
+    <string name="success">成功</string>
+    <string name="failed">失败</string>
+    <string name="error">错误</string>
+    <string name="warning">警告</string>
+    <string name="info">信息</string>
+</resources>
