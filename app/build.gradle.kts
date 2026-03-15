@@ -83,7 +83,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
-    implementation(libs.desugar.jdk)
+    coreLibraryDesugaring(libs.desugar.jdk)
 
     implementation(libs.okhttp)
     implementation(libs.okhttp.sse)
